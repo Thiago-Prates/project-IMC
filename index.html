@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Model</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <header>
+          <h1>Calcule seu IMC</h1>
+        </header>
+
+        <div class="input">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" placeholder="Ex: Thiago Prates" />
+        </div>
+        <div class="input">
+          <label for="peso"
+            >Peso: <span class="help">em quilogramas (kg)</span></label
+          >
+          <input type="number" id="peso" placeholder="Ex: 79,5" />
+        </div>
+        <div class="input">
+          <label for="altura"
+            >Altura: <span class="help">em metros (m) </span></label
+          >
+          <input type="number" id="altura" placeholder="Ex: 1.75" />
+        </div>
+
+        <div class="buttons">
+          <button type="submit">Calcular</button>
+        </div>
+
+        <div class="result">RESULTADO</div>
+        <footer>
+          <p>Made by Thiago Prates</p>
+        </footer>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
