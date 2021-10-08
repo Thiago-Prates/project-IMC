@@ -1,26 +1,34 @@
-const buttonCalc = document.getElementById('calcular');
+const calculate = document.getElementById('calcular');
 
-const name = document.getElementById('nome').value;
-const weight = document.getElementById('peso').value;
-const height = document.getElementById('altura').value;
-const result = document.getElementById('resultado');
+function calculateImc() {
+  const name = document.getElementById('nome').value;
+  const height = document.getElementById('altura').value;
+  const weight = document.getElementById('peso').value;
+  const result = document.getElementById('resultado');
 
-if (name != '' && weight != '' && height != '') {
-  const imcValue = (weight / height ** 2).toFixed(1);
+  if (name !== '' && height !== '' && weight !== '') {
+    const imc = (weight / height ** 2).toFixed(2);
 
-  let situation = '';
+    let classification = '';
 
-  if (imcValue < 18.5) {
-    situation = 'Abaixo do peso';
-  } else if (imcValue < 25) {
-    situation = 'Peso ideal';
-  } else if (imcValue < 30) {
-    situation = 'Levemente acima do peso';
-  } else if (imcValue < 35) {
-    situation = 'Obesidade nível I';
-  } else if (imcValue < 40) {
-    situation = 'Obesidade nível II';
+    if (imc < 18.5) {
+      classification = 'abaixo do peso.';
+    } else if (imc < 25) {
+      classification = 'com o peso ideal.';
+    } else if (imc < 30) {
+      classification = 'levemente acima do peso.';
+    } else if (imc < 35) {
+      classification = 'com obesidade grau I.';
+    } else if (imc < 40) {
+      classification = 'com obesidade grau II.';
+    } else {
+      classification = 'com obesidade grau III.';
+    }
+
+    result.textContent = `Olá, ${name}! Você está com ${weight}kg e ${height}m, seu IMC é ${imc}. Atualmente, você está ${classification}`;
   } else {
-    situation = 'Obesidade nível III';
+    result.textContent = 'Para calcular o seu IMC , preencha todos os campos.';
   }
 }
+
+calculate.addEventListener('click', calculateImc);
