@@ -2,11 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
-  background: #377850;
+  background: linear-gradient(
+    56.2deg,
+    #377850 1.3513513513513513%,
+    #229d55 100%
+  );
+  background-blend-mode: normal;
 }
 
 .container {
@@ -24,7 +29,7 @@ header h1 {
   margin-bottom: 24px;
   color: #073b1b;
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 form {
@@ -48,12 +53,18 @@ form .input {
 form .input label {
   color: #03220f;
   font-size: 18px;
+  font-weight: 600;
 }
 
 form .input input {
-  padding: 8px;
+  padding: 12px;
   border-radius: 8px;
   border: 1px #ccc solid;
+  font-size: 14px;
+}
+
+form .input input:focus-visible {
+  outline-color: #229d55;
 }
 
 input[type='number']::-webkit-inner-spin-button {
@@ -67,6 +78,7 @@ input[type='number'] {
 form .input .help {
   color: #585858;
   font-size: 14px;
+  font-weight: 500;
 }
 
 form .buttons,
@@ -75,15 +87,20 @@ form .result {
 
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+}
+
+form .result .resultName {
+  margin-bottom: 10px;
+  color: #03220f;
 }
 
 form .buttons button {
   margin: 12px 0px;
   padding: 12px 36px;
   color: #f7faf8;
-  background: #377850;
+  background: #229d55;
   border: 1px #2b6e45 solid;
   border-radius: 8px;
   font-size: 16px;
